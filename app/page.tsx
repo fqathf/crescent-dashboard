@@ -5,52 +5,57 @@ import TopDestinations from "./components/TopDestinations";
 
 export default function Home() {
   return (
-    <main className="dashboard-bg min-h-screen">
-      {/* ─── Header ─────────────────────────────────────────────── */}
-      <header className="border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
-          {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/25">
-              <Moon className="w-5 h-5 text-white" />
+    <main className="min-h-screen bg-[var(--color-neutral)]">
+      {/* ─── Hero Section with Primary Blue Background ────────────────────────────── */}
+      <div className="bg-[var(--color-primary)] text-[var(--color-on-surface)] border-b border-[var(--color-brand-border)]">
+        {/* Header */}
+        <header className="border-b border-[rgba(255,255,255,0.15)]">
+          <div className="max-w-[1400px] mx-auto px-8 py-5 flex items-center justify-between">
+            {/* Brand */}
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-[var(--color-surface-2)] flex items-center justify-center rounded-none">
+                <Moon className="w-5 h-5 text-[var(--color-on-surface)]" />
+              </div>
+              <div>
+                <h1 className="title-lg tracking-tight uppercase">
+                  CrescentRating
+                </h1>
+                <p className="label-sm text-[var(--color-on-surface-muted)] mt-1">
+                  Muslim Travel Intelligence
+                </p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-lg font-bold text-white tracking-tight leading-none">
-                CrescentRating
-              </h1>
-              <p className="text-xs text-gray-500 font-medium tracking-wider uppercase">
-                Muslim Travel Intelligence
-              </p>
+
+            {/* Navigation / Badge */}
+            <div className="flex items-center gap-6">
+              <span className="hidden sm:inline-flex items-center gap-2 label-md text-[var(--color-on-surface)] bg-transparent border border-[var(--color-on-surface)] px-4 py-2">
+                <span className="w-2 h-2 bg-[var(--color-tertiary)]" />
+                GMTI 2025 · 10th Edition
+              </span>
+              <div className="w-10 h-10 border border-[var(--color-on-surface)] flex items-center justify-center rounded-none hover:bg-[var(--color-primary-hover)] transition-colors cursor-pointer">
+                <Compass className="w-5 h-5 text-[var(--color-on-surface)]" />
+              </div>
             </div>
           </div>
+        </header>
 
-          {/* Navigation / Badge */}
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              GMTI 2025 · 10th Edition
-            </span>
-            <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-              <Compass className="w-4 h-4 text-gray-400" />
-            </div>
+        {/* Page Title */}
+        <div className="max-w-[1400px] mx-auto px-8 py-16 animate-fade-up">
+          <div className="max-w-3xl border-l-4 border-[var(--color-tertiary)] pl-6">
+            <h2 className="headline-display text-[var(--color-on-surface)] mb-6">
+              Global Muslim Travel Dashboard
+            </h2>
+            <p className="body-lg text-[var(--color-on-surface-muted)]">
+              Key statistics and insights from the global Muslim travel market.
+              Data sourced from the Mastercard-CrescentRating Global Muslim Travel
+              Index (GMTI) 2024 &amp; 2025 reports.
+            </p>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* ─── Dashboard Content ──────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        {/* Page Title */}
-        <div className="animate-fade-up">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Global Muslim Travel Dashboard
-          </h2>
-          <p className="mt-2 text-gray-400 text-sm sm:text-base max-w-2xl">
-            Key statistics and insights from the global Muslim travel market.
-            Data sourced from the Mastercard-CrescentRating Global Muslim Travel
-            Index (GMTI) 2024 &amp; 2025 reports.
-          </p>
-        </div>
-
+      <div className="max-w-[1400px] mx-auto px-8 py-12 space-y-12">
         {/* ─── Stat Cards ───────────────────────────────────────── */}
         <section className="animate-fade-up-delay-1">
           <StatCards />
@@ -70,25 +75,24 @@ export default function Home() {
         </div>
 
         {/* ─── Footer ───────────────────────────────────────────── */}
-        <footer className="pt-6 pb-4 border-t border-white/5 animate-fade-up-delay-4">
-          <div className="flex flex-col items-center gap-3">
+        <footer className="pt-8 pb-8 border-t border-[var(--color-brand-border)] animate-fade-up-delay-4 mt-8">
+          <div className="flex flex-col items-start gap-4">
             {/* Data source attribution */}
-            <div className="flex items-center gap-2 text-xs text-gray-500">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500/60" />
+            <div className="flex items-center gap-3 body-sm text-[var(--color-on-surface-muted)]">
+              <span className="w-2 h-2 bg-[var(--color-tertiary)]" />
               <span>
                 Data sourced from the{' '}
-                <span className="text-gray-400 font-medium">
+                <span className="font-bold text-[var(--color-on-surface)]">
                   Mastercard-CrescentRating Global Muslim Travel Index (GMTI)
                 </span>{' '}
                 2024 &amp; 2025 Reports
               </span>
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs text-gray-600">
+            <div className="flex flex-col sm:flex-row items-center gap-4 caption-text text-[#888888] uppercase tracking-wider">
               <span>For internal use only</span>
-              <span className="hidden sm:inline">·</span>
+              <span className="hidden sm:inline">|</span>
               <span>
-                © {new Date().getFullYear()} CrescentRating. All rights
-                reserved.
+                © {new Date().getFullYear()} CrescentRating. All rights reserved.
               </span>
             </div>
           </div>
