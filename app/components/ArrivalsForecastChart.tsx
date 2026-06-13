@@ -149,7 +149,7 @@ export default function ArrivalsForecastChart() {
       {/* Chart */}
       <div className="mt-6">
         <ResponsiveContainer width="100%" height={380}>
-          <BarChart data={data} barCategoryGap="20%" margin={{ top: 40, right: 10, left: -10, bottom: 10 }}>
+          <BarChart data={data} barCategoryGap="20%" margin={{ top: 40, right: 10, left: 10, bottom: 10 }}>
             {/* ---- SVG Definitions ---- */}
             <defs>
               {/* Projected bar: amber stripe pattern */}
@@ -183,7 +183,7 @@ export default function ArrivalsForecastChart() {
               tickLine={false}
               tickFormatter={(v: number) => `${v}M`}
               domain={[0, 300]}
-              dx={-10}
+              width={45}
             />
 
             <Tooltip
