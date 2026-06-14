@@ -26,7 +26,7 @@ const data: DataPoint[] = [
   { year: '2022', arrivals: 110, projected: false },
   { year: '2023', arrivals: 140, projected: false },
   { year: '2024', arrivals: 176, projected: false },
-  { year: '2025', arrivals: 186, projected: true },
+  { year: '2025', arrivals: 186, projected: false },
   { year: '2028', arrivals: 230, projected: true },
   { year: '2030', arrivals: 245, projected: true },
 ];
@@ -216,7 +216,18 @@ export default function ArrivalsForecastChart() {
           <span className="label-md text-[var(--color-on-surface-muted)]">ACTUAL</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="inline-block w-4 h-4" style={{ background: 'url(#projectedPattern)' }} />
+          <span
+            className="inline-block w-4 h-4"
+            style={{
+              background: `repeating-linear-gradient(
+                -45deg,
+                var(--color-tertiary),
+                var(--color-tertiary) 2px,
+                var(--color-neutral) 2px,
+                var(--color-neutral) 5px
+              )`,
+            }}
+          />
           <span className="label-md text-[var(--color-on-surface-muted)]">PROJECTED</span>
         </div>
       </div>
